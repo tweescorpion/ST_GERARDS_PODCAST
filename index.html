@@ -22,7 +22,7 @@
   <style>
     body {
       font-family: 'Noto Sans', sans-serif;
-      color: #003366; /* Changed from FFFF00 to navy blue */
+      color: #003366; /* NAVY BLUE */
       margin: 0;
       background:
         linear-gradient(rgba(0, 51, 102, 0.6), rgba(0, 51, 102, 0.6)),
@@ -31,7 +31,7 @@
 
     header {
       background: #003366;
-      color: #ffcc00;
+      color: #ffcc00; /* Header stays yellow */
       padding: 20px;
       display: flex;
       align-items: center;
@@ -54,6 +54,7 @@
       font-size: 28px;
       margin: 0;
       font-weight: 700;
+      color: #ffcc00; /* Explicitly keep header text yellow */
     }
 
     .container {
@@ -69,6 +70,11 @@
       text-align: center;
       margin-bottom: 15px;
       font-size: 24px;
+      color: #003366; /* Force navy blue */
+    }
+
+    .podcast h3 {
+      color: #003366; /* NAVY BLUE podcast episode titles */
     }
 
     .searchbar {
