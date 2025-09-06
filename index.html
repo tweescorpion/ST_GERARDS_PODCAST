@@ -117,6 +117,10 @@
       margin-top: 10px;
     }
 
+    .hidden-video {
+      display: none; /* hides YouTube videos for now */
+    }
+
     button {
       background: #003366;
       color: #ffcc00;
@@ -198,12 +202,12 @@
       <!-- Podcast entries -->
       <div class="podcast">
         <h3>Episode 1: </h3>
-        <iframe src="https://www.youtube.com/embed/5MWT_doo68k" allowfullscreen></iframe>
+        <iframe class="hidden-video" src="https://www.youtube.com/embed/5MWT_doo68k" allowfullscreen></iframe>
       </div>
 
       <div class="podcast">
         <h3>Episode 2: </h3>
-        <iframe src="https://www.youtube.com/embed/L_Guz73e6fw" allowfullscreen></iframe>
+        <iframe class="hidden-video" src="https://www.youtube.com/embed/L_Guz73e6fw" allowfullscreen></iframe>
       </div>
 
       <div class="podcast">
@@ -272,4 +276,5 @@
   </script>
 
 </body>
+
 </html>
