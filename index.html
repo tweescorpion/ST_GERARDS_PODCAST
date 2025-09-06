@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>St Gerard's Podcast</title>
+  <title>St Gerard's School Podcast</title>
 
   <!-- Google AdSense verification script -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5750992057837893"
@@ -13,7 +13,7 @@
   <!-- Favicon -->
   <link rel="icon" href="https://tweescorpion.github.io/ST_GERARDS_WEBSITE/favicon.ico" type="image/x-icon">
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VQGCJLB30"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -27,10 +27,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 
-  <!-- SEO basics -->
-  <meta name="description" content="Welcome to the official St Gerard's School Podcast. Listen to episodes about school life, special guests, and more." />
-  <meta name="keywords" content="St Gerard's, School Podcast, Education, ST gerards bangor,podcast,Bangor, Podcasts, Students, School News" />
+  <!-- SEO improvements -->
+  <meta name="description" content="Listen to St Gerard's School Podcast featuring student speeches, interviews, and school news. Discover new episodes weekly and support the school radio club." />
+  <meta name="keywords" content="St Gerard's School Podcast, student speeches, school interviews, Bangor podcast, school radio club, education podcast, school news" />
   <meta name="author" content="Rowan Sutcliffe" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://tweescorpion.github.io/ST_GERARDS_WEBSITE/" />
 
   <style>
     body {
@@ -110,15 +112,15 @@
       border-bottom: 1px solid #ccc;
     }
 
-    audio,
-    iframe {
+    audio {
       width: 100%;
       border-radius: 8px;
       margin-top: 10px;
     }
 
-    .hidden-video {
-      display: none; /* hides YouTube videos for now */
+    .hidden-video,
+    .hidden-video-podcast {
+      display: none; /* hide video episodes completely */
     }
 
     button {
@@ -199,33 +201,32 @@
 
     <div id="podcastList">
 
-      <!-- Podcast entries -->
-      <div class="podcast">
-        <h3>Episode 1: </h3>
+      <!-- Hidden video podcast entries -->
+      <div class="podcast hidden-video-podcast">
         <iframe class="hidden-video" src="https://www.youtube.com/embed/5MWT_doo68k" allowfullscreen></iframe>
       </div>
 
-      <div class="podcast">
-        <h3>Episode 2: </h3>
+      <div class="podcast hidden-video-podcast">
         <iframe class="hidden-video" src="https://www.youtube.com/embed/L_Guz73e6fw" allowfullscreen></iframe>
       </div>
 
+      <!-- Visible audio episodes -->
       <div class="podcast">
-        <h3>Episode 3: Hugo interview </h3>
+        <h3>Episode 1: Speech 1</h3>
         <audio controls src="https://archive.org/download/rowan-1/hugo.mp3">
           Your browser does not support the audio element.
         </audio>
       </div>
 
       <div class="podcast">
-        <h3>Episode 4: Rowan interview </h3>
+        <h3>Episode 2: Speech 2</h3>
         <audio controls src="https://archive.org/download/rowan-1/rowan%20%281%29.mp3">
           Your browser does not support the audio element.
         </audio>
       </div>
 
       <div class="podcast">
-        <h3>Episode 5: Oliver interview </h3>
+        <h3>Episode 3: Speech 3</h3>
         <audio controls src="https://archive.org/download/rowan-1/oliver%20%281%29.mp3">
           Your browser does not support the audio element.
         </audio>
@@ -269,8 +270,8 @@
     searchInput.addEventListener('input', () => {
       const q = searchInput.value.toLowerCase();
       podcasts.forEach(p => {
-        const title = p.querySelector('h3').textContent.toLowerCase();
-        p.style.display = title.includes(q) ? 'block' : 'none';
+        const title = p.querySelector('h3')?.textContent.toLowerCase();
+        p.style.display = title && title.includes(q) ? 'block' : 'none';
       });
     });
   </script>
