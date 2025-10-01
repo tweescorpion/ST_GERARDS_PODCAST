@@ -120,7 +120,7 @@
 
     .hidden-video,
     .hidden-video-podcast {
-      display: none; /* hide video episodes completely */
+      display: none;
     }
 
     button {
@@ -201,7 +201,6 @@
 
     <div id="podcastList">
 
-      <!-- Hidden video podcast entries -->
       <div class="podcast hidden-video-podcast">
         <iframe class="hidden-video" src="https://www.youtube.com/embed/5MWT_doo68k" allowfullscreen></iframe>
       </div>
@@ -210,31 +209,30 @@
         <iframe class="hidden-video" src="https://www.youtube.com/embed/L_Guz73e6fw" allowfullscreen></iframe>
       </div>
 
-      <!-- Visible audio episodes with original names -->
-     <div class="podcast">
+      <div class="podcast">
         <h3>Intro: About St Gerards- Our Ethos</h3>
-        <audio controls src="https://archive.org/download/school-ethoses/school%20ethoses.mp3">
+        <audio controls preload="none" src="https://archive.org/download/school-ethoses/school%20ethoses.mp3">
           Your browser does not support the audio element.
         </audio>
       </div>
-      
+
       <div class="podcast">
         <h3>Episode 1: Hugo interview</h3>
-        <audio controls src="https://archive.org/download/rowan-1/hugo.mp3">
+        <audio controls preload="none" src="https://archive.org/download/rowan-1/hugo.mp3">
           Your browser does not support the audio element.
         </audio>
       </div>
 
       <div class="podcast">
         <h3>Episode 2: Rowan interview</h3>
-        <audio controls src="https://archive.org/download/rowan-1/rowan%20%281%29.mp3">
+        <audio controls preload="none" src="https://archive.org/download/rowan-1/rowan%20%281%29.mp3">
           Your browser does not support the audio element.
         </audio>
       </div>
 
       <div class="podcast">
         <h3>Episode 3: Oliver interview</h3>
-        <audio controls src="https://archive.org/download/rowan-1/oliver%20%281%29.mp3">
+        <audio controls preload="none" src="https://archive.org/download/rowan-1/oliver%20%281%29.mp3">
           Your browser does not support the audio element.
         </audio>
       </div>
@@ -246,35 +244,8 @@
         </audio>
       </div>
 
-
-       <div class="podcast">
+      <div class="podcast">
         <h3>Episode 5: School Charity Planning</h3>
-        <audio controls src="https://archive.org/download/school-ms-dickinson-interveiw/school%20ms%20dickinson%20interveiw.mp3">
+        <audio controls preload="none" src="https://archive.org/download/school-ms-dickinson-interveiw/school%20ms%20dickinson%20interveiw.mp3">
           Your browser does not support the audio element.
         </audio>
-      </div>
-
-
-
-      </div>
-  </div>
-
-  <footer>
-    <a href="https://www.st-gerards.org/" target="_blank" rel="noopener">Visit St Gerard's School Website</a>
-  </footer>
-
-  <script>
-    const searchInput = document.getElementById('searchInput');
-    const podcasts = document.querySelectorAll('.podcast');
-
-    searchInput.addEventListener('input', () => {
-      const q = searchInput.value.toLowerCase();
-      podcasts.forEach(p => {
-        const title = p.querySelector('h3')?.textContent.toLowerCase();
-        p.style.display = title && title.includes(q) ? 'block' : 'none';
-      });
-    });
-  </script>
-
-</body>
-</html>
