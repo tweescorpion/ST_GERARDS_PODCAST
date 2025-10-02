@@ -244,7 +244,32 @@
         </audio>
       </div>
 
-      <div class="podcast">
+            <div class="podcast">
         <h3>Episode 5: School Charity Planning</h3>
         <audio controls preload="metadata" src="https://github.com/tweescorpion/tweescorpion.github.io/raw/refs/heads/main/school%20ms%20dickinson%20interveiw.mp3">
-          Your browser
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+    </div> <!-- closes #podcastList -->
+  </div> <!-- closes .container -->
+
+  <footer>
+    <p>&copy; 2025 St Gerard's School Podcast | Visit <a href="https://www.st-gerards.org" target="_blank">St Gerard's School</a></p>
+  </footer>
+
+  <script>
+    // Simple search functionality
+    document.getElementById('searchInput').addEventListener('keyup', function () {
+      let filter = this.value.toLowerCase();
+      let podcasts = document.querySelectorAll('#podcastList .podcast');
+      podcasts.forEach(podcast => {
+        let text = podcast.innerText.toLowerCase();
+        podcast.style.display = text.includes(filter) ? '' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
+
